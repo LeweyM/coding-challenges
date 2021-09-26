@@ -1,20 +1,4 @@
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
-        self.prev = None
-
-    def __hash__(self):
-        str(self.value)
-
-    def get_value(self):
-        return self.value
-
-    def set_next(self, next_node):
-        self.next = next_node
-
-    def set_prev(self, prev_node):
-        self.prev = prev_node
+from src.linkedlists.llnode import LLNode
 
 
 class LList:
@@ -24,7 +8,7 @@ class LList:
         self.size = 0
 
     def add_left(self, value):
-        node = Node(value)
+        node = LLNode(value)
         if self.left is None and self.right is None:
             self.left = node
             self.right = node
@@ -43,7 +27,7 @@ class LList:
         return right
 
     def add_right(self, value):
-        node = Node(value)
+        node = LLNode(value)
         if self.left is None and self.right is None:
             self.left = node
             self.right = node
